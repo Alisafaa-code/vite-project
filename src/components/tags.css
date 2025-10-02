@@ -1,0 +1,26 @@
+.tags {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 8px;
+     margin-left: 20px;
+}
+.tags button {
+     background-color: #f0f0f0;
+     border: none;
+     border-radius: 10px;
+     padding: 6px 20px;
+     cursor: pointer;
+     transition: background-color 0.3s;
+     font-weight: 600;
+     margin-top: 40px;
+     color: #303030;
+}
+
+.tags .sort {
+     border: 1px solid #c0c0c0;
+     border-radius: 10px;
+     background-color: transparent;
+}
+.tags button:hover {
+     background-color: #e0e0e0;
+}

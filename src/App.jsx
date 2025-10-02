@@ -1,0 +1,221 @@
+import Header from "./components/Header.jsx";
+import Hero from "./components/Hero.jsx";
+import Tags from "./components/Tags.jsx";
+import "./components/feed.css";
+const App = () => {
+     const renderStars = (count) => "★".repeat(count) + "☆".repeat(5 - count);
+
+     const products = [
+          {
+               img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop&q=80",
+               alt: "Apple AirPods Pro",
+               title: "Apple AirPods Pro",
+               price: "$150.00",
+               description:
+                    "Experience premium sound and noise cancellation with Apple AirPods Pro.",
+               rating: renderStars(4),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&h=300&fit=crop&q=80",
+               alt: "Apple AirPods Max",
+               title: "Apple AirPods Max",
+               price: "$500.00",
+               description:
+                    "Enjoy immersive audio and luxurious comfort with Apple AirPods Max.",
+               rating: renderStars(5),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=400&h=300&fit=crop&q=80",
+               alt: "Apple AirPods 3rd Gen",
+               title: "Apple AirPods 3rd Gen",
+               price: "$200.00",
+               description:
+                    "Apple AirPods 3rd Gen deliver high-fidelity sound and a sleek design.",
+               rating: renderStars(3),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=300&fit=crop&q=80",
+               alt: "Apple Beats Studio Buds",
+               title: "Apple Beats Studio Buds",
+               price: "$399.00",
+               description:
+                    "Apple Beats Studio Buds offer powerful bass and true wireless freedom.",
+               rating: renderStars(2),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400&h=300&fit=crop&q=80",
+               alt: "Sony WH-1000XM5",
+               title: "Sony WH-1000XM5",
+               price: "$349.99",
+               description:
+                    "Sony WH-1000XM5 headphones feature industry-leading noise cancellation.",
+               rating: renderStars(5),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1558756520-22cfe5d382ca?w=400&h=300&fit=crop&q=80",
+               alt: "Sony WF-1000XM4",
+               title: "Sony WF-1000XM4",
+               price: "$279.00",
+               description:
+                    "Sony WF-1000XM4 earbuds deliver exceptional sound and comfort.",
+               rating: renderStars(4),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?w=400&h=300&fit=crop&q=80",
+               alt: "Sony WH-CH720N",
+               title: "Sony WH-CH720N",
+               price: "$149.00",
+               description:
+                    "Sony WH-CH720N headphones provide clear audio and lightweight design.",
+               rating: renderStars(3),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=400&h=300&fit=crop&q=80",
+               alt: "Sony LinkBuds",
+               title: "Sony LinkBuds",
+               price: "$179.00",
+               description:
+                    "Sony LinkBuds offer open-ear comfort and natural sound experience.",
+               rating: renderStars(2),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?w=400&h=300&fit=crop&q=80",
+               alt: "Bose QuietComfort 45",
+               title: "Bose QuietComfort 45",
+               price: "$329.00",
+               description:
+                    "Bose QuietComfort 45 headphones deliver world-class noise cancellation.",
+               rating: renderStars(5),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1632200004922-bc18602c79fc?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+               alt: "Bose QuietComfort Earbuds",
+               title: "Bose QuietComfort Earbuds",
+               price: "$279.00",
+               description:
+                    "Bose QuietComfort Earbuds provide rich sound and secure fit.",
+               rating: renderStars(4),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=400&h=300&fit=crop&q=80",
+               alt: "Bose SoundLink Flex",
+               title: "Bose SoundLink Flex",
+               price: "$149.00",
+               description:
+                    "Bose SoundLink Flex offers portable audio with deep bass.",
+               rating: renderStars(3),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=300&fit=crop&q=80",
+               alt: "Bose Sport Earbuds",
+               title: "Bose Sport Earbuds",
+               price: "$89.00",
+               description:
+                    "Bose Sport Earbuds are designed for active lifestyles and clear sound.",
+               rating: renderStars(2),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=400&h=300&fit=crop&q=80",
+               alt: "Samsung Galaxy Buds Pro",
+               title: "Samsung Galaxy Buds Pro",
+               price: "$199.00",
+               description:
+                    "Samsung Galaxy Buds Pro deliver dynamic sound and active noise cancellation.",
+               rating: renderStars(4),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1615796153287-98eacf0abb13?w=400&h=300&fit=crop&q=80",
+               alt: "Samsung Galaxy Buds 2",
+               title: "Samsung Galaxy Buds 2",
+               price: "$129.99",
+               description:
+                    "Samsung Galaxy Buds 2 offer balanced sound and comfortable fit.",
+               rating: renderStars(3),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1599669454699-248893623440?w=400&h=300&fit=crop&q=80",
+               alt: "Sennheiser Momentum 4",
+               title: "Sennheiser Momentum 4",
+               price: "$379.99",
+               description:
+                    "Sennheiser Momentum 4 headphones provide superior sound and comfort.",
+               rating: renderStars(5),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=400&h=300&fit=crop&q=80",
+               alt: "Sennheiser CX True Wireless",
+               title: "Sennheiser CX True Wireless",
+               price: "$249.99",
+               description:
+                    "Sennheiser CX True Wireless earbuds deliver clear audio and long battery life.",
+               rating: renderStars(4),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1577174881658-0f30ed549adc?w=400&h=300&fit=crop&q=80",
+               alt: "JBL Tour One M2",
+               title: "JBL Tour One M2",
+               price: "$299.99",
+               description:
+                    "JBL Tour One M2 headphones feature adaptive noise cancellation and crisp sound.",
+               rating: renderStars(3),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1564424224827-cd24b8915874?w=400&h=300&fit=crop&q=80",
+               alt: "JBL Reflect Flow Pro",
+               title: "JBL Reflect Flow Pro",
+               price: "$189.99",
+               description:
+                    "JBL Reflect Flow Pro earbuds are perfect for workouts and active use.",
+               rating: renderStars(2),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1585102651425-8caf7848e44b?q=80&w=1481&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+               alt: "Audio-Technica ATH-M50xBT2",
+               title: "Audio-Technica ATH-M50xBT2",
+               price: "$249.99",
+               description:
+                    "Audio-Technica ATH-M50xBT2 headphones deliver studio-quality wireless audio.",
+               rating: renderStars(4),
+          },
+          {
+               img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&q=80",
+               alt: "Audio-Technica ATH-CKS5TW",
+               title: "Audio-Technica ATH-CKS5TW",
+               price: "$179.99",
+               description:
+                    "Audio-Technica ATH-CKS5TW earbuds provide deep bass and comfortable fit.",
+               rating: renderStars(3),
+          },
+     ];
+
+     return (
+          <>
+               <Header />
+               <Hero />
+               <Tags />
+               <div className="feed">
+                    <h2>Headphones for you</h2>
+                    <div className="products">
+                         {products.map((product, idx) => (
+                              <div className="product-card" key={idx}>
+                                   <img src={product.img} alt={product.alt} />
+                                   <div className="title-and-price">
+                                        <h3>{product.title}</h3>
+                                        <strong>{product.price}</strong>
+                                   </div>
+                                   <div className="description-and-rating">
+                                        <p>{product.description}</p>
+                                        <span>{product.rating}</span>
+                                        <button className="addToCart">
+                                             Add to cart
+                                        </button>
+                                   </div>
+                              </div>
+                         ))}
+                    </div>
+               </div>
+          </>
+     );
+};
+
+export default App;
