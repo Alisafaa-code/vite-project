@@ -1,11 +1,9 @@
-import { Analytics } from "@vercel/analytics/next";
 import Header from "./components/Header.jsx";
 import Hero from "./components/Hero.jsx";
 import Tags from "./components/Tags.jsx";
 import "./components/feed.css";
 const App = () => {
      const renderStars = (count) => "★".repeat(count) + "☆".repeat(5 - count);
-
      const products = [
           {
                img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop&q=80",
@@ -191,7 +189,6 @@ const App = () => {
 
      return (
           <>
-               {/* <Analytics /> */}
                <Header />
                <Hero />
                <Tags />
