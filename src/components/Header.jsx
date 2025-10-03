@@ -19,7 +19,7 @@ const Header = () => {
                               placeholder="search products"
                          />
                          <img
-                              src={"../public/assets/images/search_icon.png"}
+                              src="/assets/images/search_icon.png"
                               className="searchIcon"
                               alt="search_icon"
                          />
@@ -27,7 +27,7 @@ const Header = () => {
 
                     <div className="account">
                          <img
-                              src="../public/assets/images/user_icon.png"
+                              src="/assets/images/user_icon.png"
                               className="userIcon"
                               alt="user_icon"
                          />
@@ -35,7 +35,7 @@ const Header = () => {
                     </div>
                     <div className="cart">
                          <img
-                              src="../public/assets/images/cart_icon.png"
+                              src="/assets/images/cart_icon.png"
                               className="cartIcon"
                               alt="cart_icon"
                          />
