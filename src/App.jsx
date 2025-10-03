@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import Header from "./components/Header.jsx";
 import Hero from "./components/Hero.jsx";
 import Tags from "./components/Tags.jsx";
@@ -190,6 +191,7 @@ const App = () => {
 
      return (
           <>
+               <Analytics />
                <Header />
                <Hero />
                <Tags />
