@@ -191,7 +191,7 @@ const App = () => {
 
      return (
           <>
-               <Analytics />
+               {/* <Analytics /> */}
                <Header />
                <Hero />
                <Tags />
