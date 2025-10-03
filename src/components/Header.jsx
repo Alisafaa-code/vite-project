@@ -19,7 +19,7 @@ const Header = () => {
                               placeholder="search products"
                          />
                          <img
-                              src="/assets/images/search_icon.png"
+                              src="./assets/images/search_icon.png"
                               className="searchIcon"
                               alt="search_icon"
                          />
