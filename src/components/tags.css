@@ -2,7 +2,7 @@
      display: flex;
      flex-wrap: wrap;
      gap: 8px;
-     margin-left: 20px;
+     justify-content: center;
 }
 .tags button {
      background-color: #f0f0f0;

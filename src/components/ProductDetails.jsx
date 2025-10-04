@@ -6,6 +6,26 @@ const ProductDetails = () => {
      const { title } = useParams();
      const [product, setProduct] = useState([]);
      const [match, setMatch] = useState({});
+     const [cart, setCart] = useState([]);
+
+     const addToCart = () => {
+          setCart((prevCart) => {
+               const existing = prevCart.find(
+                    (item) => item.title === match.title
+               );
+               if (existing) {
+                    alert("Item already in cart, increasing quantity");
+                    return prevCart.map((item) =>
+                         item.title === match.title
+                              ? { ...item, quantity: item.quantity + 1 }
+                              : item
+                    );
+               } else {
+                    alert("Item added to cart");
+                    return [...prevCart, { ...match, quantity: 1 }];
+               }
+          });
+     };
 
      useEffect(() => {
           fetch("/products.json")
@@ -24,6 +44,10 @@ const ProductDetails = () => {
           const MatchItem = product.find((item) => item.title === title);
           setMatch(MatchItem);
      }, [product, title]);
+
+     useEffect(() => {
+          console.log("Cart updated:", cart);
+     }, [cart]);
 
      return (
           <div className="product_details">
@@ -51,7 +75,9 @@ const ProductDetails = () => {
                          <span>0 items available</span>
                     </div>
                     <div className="action_buttons">
-                         <button className="add_to_cart">Add to Cart</button>
+                         <button onClick={addToCart} className="add_to_cart">
+                              Add to Cart
+                         </button>
                          <button className="buy_now">Buy Now</button>
                     </div>
                     <div className="delivery_and_return">
@@ -60,14 +86,19 @@ const ProductDetails = () => {
                                    src="../assets/images/car_icon.png"
                                    alt="car_icon"
                               />
-                              <h3>free delivery</h3>
+                              <h3>
+                                   free delivery <br /> <span>learn More</span>
+                              </h3>
                          </div>
                          <div className="return">
                               <img
                                    src="../assets/images/car_icon.png"
                                    alt="file_icon"
                               />
-                              <h3>return delivery</h3>
+                              <h3>
+                                   return delivery <br />{" "}
+                                   <span>learn More</span>
+                              </h3>
                          </div>
                     </div>
                </div>
